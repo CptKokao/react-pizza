@@ -3,15 +3,24 @@ const initialState = {
   isLoaded: false,
 };
 
-const pizzzas = (state = initialState, action) => {
-  if (action.type === 'SET_PIZZAS') {
-    return {
-      ...state,
-      items: action.payload
-    }
-  }
+const pizzas  = (state = initialState, action) => {
+  switch (action.type) {
+    case 'SET_PIZZAS':
+      return {
+        ...state,
+        items: action.payload,
+        isLoaded: true,
+      };
 
-  return state;
+    case 'SET_LOADED':
+      return {
+        ...state,
+        isLoaded: action.payload,
+      };
+
+    default:
+      return state;
+  }
 }
 
-export default pizzzas;
+export default pizzas;

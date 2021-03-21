@@ -2,7 +2,9 @@ import React, {useState} from 'react';
 import classNames from 'classnames';
 import PropTypes from 'prop-types';
 
-const PizzaBlock = ({ id, name, imageUrl, price, types, sizes }) => {
+import LoadingBlock from './LoadingBlock';
+
+const PizzaBlock = ({ name, imageUrl, price, types, sizes }) => {
 
   const availableType = ["тонкое", 'традиционное'];
   const [activeType, setActiveType] = useState(types[0]);
